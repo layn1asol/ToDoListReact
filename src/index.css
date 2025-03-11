@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  background: rgb(49, 49, 49);
+  width: 100%;
+  min-height: 100vh; /* Changed from fixed height */
+  overflow-x: hidden;
+  overflow-y: auto; /* Enable vertical scrolling */
+  scroll-behavior: smooth;
+}
+
+.to-do-list{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.container {
+  background-color: white;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 40px;
+}
+
+h1 {
+  font-size: 4rem;
+  color: black;
+}
+
+button {
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.add-button {
+  background-color: rgb(89, 0, 255);;
+}
+
+.add-button:hover {
+  background-color: rgb(112, 112, 112);
+}
+
+.delete-button {
+  background-color: rgb(255, 0, 85);
+}
+
+.delete-button:hover {
+  background-color: rgba(255, 0, 98, 0.788);
+}
+
+.move-button {
+  background-color: rgb(0, 89, 255);
+}
+
+.move-button:hover {
+  background-color: rgba(4, 0, 255, 0.788);
+}
+
+input[type="text"] {
+  font-size: 1.6rem;
+  padding: 10px;
+  border: 2px solid #d1d1d1;
+  border-radius: 10px;
+  width: 50%;
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
+  margin-right: 10px;
+}
+
+ol {
+  padding: 0;
+}
+
+li {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.733);
+  margin-bottom: 10px;
+  border: 3px solid rgba(177, 177, 177, 0.658);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+
+}
+
+.text {
+  flex: 1;
+}
+
+.delete-button, .move-button {
+  padding: 8px 12px;
+  font-size: 1.4rem;
+  margin-left: 10px;
+}
