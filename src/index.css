@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body{
-  background: rgb(28, 25, 49);
+  background: #667eea;
   width: 100%;
   min-height: 100vh; /* Changed from fixed height */
   overflow-x: hidden;
   overflow-y: auto; /* Enable vertical scrolling */
   scroll-behavior: smooth;
+  margin: 0;
 }
 
 .to-do-list{
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  margin-top: 100px;
+  min-height: 100vh;
 }
 
 .container {
@@ -70,10 +71,7 @@ input[type="text"] {
   padding: 10px;
   border: 2px solid #d1d1d1;
   border-radius: 10px;
-  width: 50%;
-  margin-top: 20px;
   color: rgb(0, 0, 0);
-  margin-right: 10px;
 }
 
 ol {
