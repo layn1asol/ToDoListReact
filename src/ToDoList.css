@@ -1,5 +1,5 @@
 .to-do-list {
-    padding: 0 2rem 2rem 2rem;
+    padding: 0 2rem 0 2rem;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     display: flow-root;  /* This creates a new block formatting context to prevent margin collapsing */
 }
@@ -7,6 +7,7 @@
 .container {
     max-width: 800px;
     margin-top: 8rem;
+    margin-bottom: 2rem;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     padding: 2.5rem;
@@ -169,6 +170,10 @@ input[type="text"]:focus {
     color: #1a1a1a;
     cursor: pointer;
     transition: all 0.3s ease;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .task-actions {
@@ -246,6 +251,12 @@ input[type="text"]:focus {
     gap: 1rem;
 }
 
+.task-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
 .task-category {
     font-size: 0.9rem;
     padding: 0.3rem 0.8rem;
@@ -289,11 +300,15 @@ input[type="text"]:focus {
 /* Improved responsiveness to prevent elements from going off screen */
 @media (max-width: 992px) {
     .to-do-list {
-        padding: 0 1rem 1rem 1rem;
+        padding: 0 1rem 0 1rem;
     }
 
     .container {
         margin-top: 6.5rem;
+    }
+
+    .subtitle {
+        margin-bottom: 1rem;
     }
 
     .add-task-section {
@@ -338,7 +353,6 @@ input[type="text"]:focus {
 @media (max-width: 768px) {
     .container {
         padding: 1.5rem;
-
     }
 
     .add-task-section, 
@@ -362,11 +376,27 @@ input[type="text"]:focus {
         gap: 1rem;
         padding: 1rem;
     }
+    
+    .task-row {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
 
     .task-content {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
         gap: 0.8rem;
+        flex-wrap: wrap;
+    }
+
+    .task-text {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .task-category {
+        white-space: nowrap;
     }
 
     .task-actions {
@@ -422,6 +452,26 @@ input[type="text"]:focus {
     
     .add-button {
         min-width: unset;
+    }
+
+    .task-row {
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+
+    .task-checkbox {
+        margin-top: 0.3rem;
+    }
+
+    .task-content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .task-text {
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
     }
 }
 

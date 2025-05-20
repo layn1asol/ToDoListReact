@@ -17,7 +17,7 @@ function App() {
             <h1 className="title" onClick={scrollToTop} style={{ cursor: 'pointer' }}>TaskMaster</h1>
           </div>
           <a 
-            href="https://github.com/layn1asol/ToDoList"
+            href="https://github.com/layn1asol/ToDoListReact"
             target="_blank"
             rel="noopener noreferrer"
             className="github-link"

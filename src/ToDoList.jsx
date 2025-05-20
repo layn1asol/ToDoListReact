@@ -85,8 +85,17 @@ function ToDoList() {
         setTasks(tasks.map(task =>
             task.id === id ? { ...task, text: newText } : task
         ));
-        setEditingTask(null);
     }
+
+    const handleEditInputChange = (id, newText) => {
+        setTasks(tasks.map(task =>
+            task.id === id ? { ...task, text: newText } : task
+        ));
+    };
+
+    const finishEditing = () => {
+        setEditingTask(null);
+    };
 
     function moveTaskUp(index) {
         if (index > 0) {
@@ -202,24 +211,26 @@ function ToDoList() {
                                 <input
                                     type="text"
                                     value={task.text}
-                                    onChange={(e) => editTask(task.id, e.target.value)}
-                                    onBlur={() => setEditingTask(null)}
-                                    onKeyPress={(e) => e.key === 'Enter' && setEditingTask(null)}
+                                    onChange={(e) => handleEditInputChange(task.id, e.target.value)}
+                                    onBlur={finishEditing}
+                                    onKeyPress={(e) => e.key === 'Enter' && finishEditing()}
                                     autoFocus
                                 />
                             ) : (
                                 <>
-                                    <input
-                                        type="checkbox"
-                                        checked={task.completed}
-                                        onChange={() => toggleTask(task.id)}
-                                        className="task-checkbox"
-                                    />
-                                    <div className="task-content">
-                                        <span className="task-text" onClick={() => setEditingTask(task.id)}>
-                                            {task.text}
-                                        </span>
-                                        <span className="task-category">{task.category}</span>
+                                    <div className="task-row">
+                                        <input
+                                            type="checkbox"
+                                            checked={task.completed}
+                                            onChange={() => toggleTask(task.id)}
+                                            className="task-checkbox"
+                                        />
+                                        <div className="task-content">
+                                            <span className="task-text" onClick={() => setEditingTask(task.id)}>
+                                                {task.text}
+                                            </span>
+                                            <span className="task-category">{task.category}</span>
+                                        </div>
                                     </div>
                                     <div className="task-actions">
                                         <button
